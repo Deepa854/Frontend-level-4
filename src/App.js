@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import TaskInput from './components/TaskInput';
+import TaskList from './components/TaskList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = () => {
+  const [tasks, setTasks] = useState([]);
+
+  const addTask = (newTask) => {
+    setTasks([...tasks, { ...newTask, id: tasks.length + 1 }]);
+  };
+
+  const deleteTask = (taskId) => {
+    setTasks(tasks.filter((task) => task.id !== taskId));
+  };
+ return (
+    <div className="container mt-4">
+      <h1 className="text-center mb-4">Priority To-Do List App</h1>
+      <TaskInput addTask={addTask} />
+      <div className="row">
+        <div className="col">
+          <TaskList tasks={tasks} priority="Low" deleteTask={deleteTask} />
+        </div>
+        <div className="col">
+          <TaskList tasks={tasks} priority="Medium" deleteTask={deleteTask} />
+        </div>
+        <div className="col">
+          <TaskList tasks={tasks} priority="High" deleteTask={deleteTask} />
+        </div>
+      </div>
     </div>
   );
-}
-
+};
 export default App;

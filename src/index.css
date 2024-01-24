@@ -1,13 +1,55 @@
-body {
+
+
+
+body,h1,h2,h3,p,ul {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Set box-sizing to border-box for all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Apply a border and some padding to the root container */
+body {
+  border: 2px solid #007bff; /* Primary Blue */
+  padding: 10px;
+}
+
+/* Style the root container */
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Apply some spacing to elements */
+h1,h2,h3,p {
+  margin-bottom: 10px;
+}
+
+/* Style the TaskInput component */
+.form-control, 
+.btn-primary {
+  margin-right: 10px;
+}
+
+/* Style the TaskList component */
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .form-control,
+  .btn-primary {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 }
