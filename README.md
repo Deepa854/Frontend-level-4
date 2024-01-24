@@ -1,3 +1,7 @@
+# Overview
+The Priority To-Do List App is a web application designed to help users manage and prioritize their tasks based on different priority levels. Users can add tasks, assign priorities (low, medium, high), and view tasks categorized by priority. The app aims to provide a simple and intuitive interface for effective task management.
+
+
 # Steps to Create React Application:
 Step 1:  Create a react application using the following command 
          npx create-react-app foldername
